@@ -1,6 +1,6 @@
 import { defineStore } from "pinia"
-import {preloadedMessageList, PreloadedMessagesListInterface, studentName} from "../src/data/data";
-import { getAttachmentExtension } from "../src/mixins/mixins";
+import {preloadedMessageList, PreloadedMessagesListInterface, studentName} from "@/data/data";
+import { getAttachmentExtension } from "@/mixins/mixins";
 
 export const useConversationStore = defineStore("conversation", {
     state: () => ({
