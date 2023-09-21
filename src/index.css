@@ -1,0 +1,19 @@
+@import "assets/css/transitions.css";
+/*@import "assets/css/input.css";*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind transitions;
+
+@layer input {
+    .custom-input--file::file-selector-button {
+        visibility: hidden;
+    }
+}
+
+@layer random {
+    .scroll-behavior-smooth {
+        scroll-behavior: smooth;
+    }
+}
