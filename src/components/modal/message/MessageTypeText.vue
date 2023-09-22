@@ -33,7 +33,6 @@
 </template>
 
 <script setup lang="ts">
-
 import { studentAvatar, tutorAvatar } from "@/data/data";
 import { formatDateDayMonthYear, formatTimeHoursAndMinutes } from "@/mixins/mixins";
 
@@ -45,6 +44,7 @@ function getAvatarUrl(isStudent: boolean): string {
   return isStudent ? studentAvatar : tutorAvatar;
 }
 
+// Callback mixins function to format date and hour into text
 function getPublishDateText(publishDate: number): string {
   return `${formatDateDayMonthYear(publishDate, " ")} / ${formatTimeHoursAndMinutes(publishDate)}`;
 }

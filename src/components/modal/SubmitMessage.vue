@@ -63,7 +63,6 @@
 </template>
 
 <script setup lang="ts">
-
 import { computed, ref, nextTick } from "vue";
 import { useConversationStore } from "../../../store/store";
 
@@ -89,6 +88,7 @@ function submitData(): void {
   // remove whitespace from both ends
   message.value = message.value.trim();
 
+  // return if there are no messages of any type
   if (!message.value && !hasAttachment.value)
     return
 
@@ -108,6 +108,7 @@ function submitData(): void {
 
 }
 
+// Store attached when uploaded
 function onAttachFile(event: Event): void {
   attachment.value = (event.target as object).files[0];
   clearMessageValue();

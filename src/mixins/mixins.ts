@@ -31,11 +31,11 @@ export function formatDateDayMonthYear(date: string | number, divider: string = 
 }
 
 /***
- *  Get file extension from attachment name
- * @param attachmentName
+ *  Get file extension from file name
+ * @param fileName
  * @return{string} return file extension e.g.: 'PDF'
  */
-export function getAttachmentExtension(attachmentName: string): string {
-    return attachmentName.split(".")[1].toUpperCase();
+export function getAttachmentExtension(fileName: string): string {
+    return fileName.split(".")[1].toUpperCase();
 }
 

@@ -6,7 +6,7 @@
         role="region"
         aria-modal="true"
         aria-label="Modal chat para hablar con el tutor"
-        class="relative bg-white max-w-3xl h-full overflow-hidden max-h-38rem rounded">
+        class="relative bg-white max-w-4xl h-full overflow-hidden max-h-48rem rounded">
       <aside
           aria-label="top-bar"
           aria-describedby="Parte superior de modal con título y botón para cerrar"
@@ -64,6 +64,7 @@ function hideModal(): void {
   emit("hide-modal", true);
 }
 
+// Every time a message is added the function is fired and the messages list container scrolls to the last message.
 function scrollToLastMessage(element: HTMLUListElement): void {
   messagesListElement.value?.$el.scrollBy({
     top: element.getBoundingClientRect().bottom,

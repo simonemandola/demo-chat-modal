@@ -13,7 +13,7 @@ module.exports = {
                 'fit': 'fit-content',
             },
             maxHeight: {
-                '38rem': '38rem',
+                '48rem': '48rem',
             },
             gridTemplateColumns: {
                 'header': '1fr 3rem',

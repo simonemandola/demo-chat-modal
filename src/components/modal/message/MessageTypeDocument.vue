@@ -13,7 +13,7 @@
         <p
             :aria-label="message.attachment.extension"
             aria-details="Tipo de documento">
-          <span class="hidden md:block">Documento / </span>{{ message.attachment.extension }}
+          <span class="hidden md:inline">Documento / </span>{{ message.attachment.extension }}
         </p>
         <p
             :aria-label="getAttachmentSize(message.attachment.size)"
@@ -51,11 +51,13 @@ defineProps<{
   message: object,
 }>();
 
+// This function returns the document size value converted to MB if the result is greater than one, or in KB if it is smaller.
 function getAttachmentSize( size: number ): string {
   const finalSize = parseFloat( ( size / 1048576 ).toFixed( 1 ) ); // Divided the size by one MB to get MB
   return finalSize >= 1 ? `(${ finalSize } MB)` : `(${ ( size / 1024 ).toFixed( 1 ) } KB)`; // Divided the size by one KB to get KB
 }
 
+// Callback mixins function to format date and hour into text
 function getPublishDateText(publishDate: number): string {
   return `${formatDateDayMonthYear(publishDate, " ")} / ${formatTimeHoursAndMinutes(publishDate)}`;
 }

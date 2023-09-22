@@ -9,6 +9,7 @@ export const useConversationStore = defineStore("conversation", {
     }),
     actions: {
         sendAttachmentMessage(attachment: object): void {
+            // Create new data to push into the messages list
             const newData: PreloadedMessagesListInterface = {
                 author: studentName,
                 attachment: {
@@ -26,6 +27,7 @@ export const useConversationStore = defineStore("conversation", {
             this.messagesList.push(newData);
         },
         sendTextMessage(text: string): void {
+            // Create new data to push into the messages list
             const newData: PreloadedMessagesListInterface = {
                 author: studentName,
                 attachment: {},
