@@ -5,6 +5,7 @@
         @click.prevent="doShowModal"
         aria-label="Hablar con mi tutor"
         class="rounded bg-blue-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase text-white shadow hover:bg-blue-400 focus:bg-primary-700 active:bg-blue-700"
+        data-e2e-main-button
     >
       Hablar con mi tutor
     </button>

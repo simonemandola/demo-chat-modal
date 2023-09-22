@@ -17,7 +17,7 @@ export const studentName = "Silvia";
 export const tutorName = "Paco";
 export const studentAvatar = "src/assets/img/student-avatar.jpg";
 export const tutorAvatar = "src/assets/img/tutor-avatar.jpg";
-export const attachmentUrl = "src/assets/data/Titulo del archivo a subir 2.pdf";
+export const attachmentUrl = "src/assets/Titulo del archivo a subir 2.pdf";
 
 export const preloadedMessageList = <PreloadedMessagesListInterface[]>[
     {

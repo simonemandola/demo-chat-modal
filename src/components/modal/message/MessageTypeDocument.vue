@@ -5,7 +5,11 @@
   >
     <section class="grid grid-flow-row gap-y-2">
       <p aria-label="Versión del trabajo" class="uppercase text-xs font-bold">Versión {{ message.attachment.version }}</p>
-      <p aria-label="Nombre del archivo" class="text-blue-600 font-bold">{{ message.attachment.name }}</p>
+      <p
+          aria-label="Nombre del archivo"
+          class="text-blue-600 font-bold"
+          data-e2e-modal-message-type-document-name
+      >{{ message.attachment.name }}</p>
       <aside
           aria-label="Detalles"
           aria-describedby="Detalles del mensaje, tipo, tamaño y fecha de publicación"

@@ -1,5 +1,6 @@
 <template>
   <article
+      data-e2e-modal-container
       class="bg-black bg-opacity-75 fixed inset-0 z-10 flex justify-center items-center overflow-auto py-8 px-3 md:px-6 box-border"
   >
     <section
@@ -10,7 +11,9 @@
       <aside
           aria-label="top-bar"
           aria-describedby="Parte superior de modal con título y botón para cerrar"
-          class="sticky z-10 top-0 left-0 right-0 py-4 px-2 grid grid-cols-header justify-between items-center border-b-2 border-gray-700 bg-white shadow-md">
+          class="sticky z-10 top-0 left-0 right-0 py-4 px-2 grid grid-cols-header justify-between items-center border-b-2 border-gray-700 bg-white shadow-md"
+          data-e2e-modal-top-bar
+      >
         <h1 class="justify-self-center font-medium ml-12" aria-label="Titulo comentarios, hablar con el tutor">Comentarios</h1>
         <button
             type="button"
@@ -18,6 +21,7 @@
             aria-label="Cerrar modal"
             class="text-blue-600 text-2xl transform transition ease-in-out duration-500 hover:rotate-180"
             title="Cerrar"
+            data-e2e-modal-button-close
         >
           <i aria-hidden="true" class="fa-solid fa-xmark"></i>
         </button>
@@ -30,6 +34,7 @@
           aria-label="Listado de mensajes"
           @enter="scrollToLastMessage($event)"
           class="h-full overflow-auto pt-4 pb-32 px-3 md:px-8 grid grid-flow-row gap-y-2 scroll-behavior-smooth"
+          data-e2e-modal-messages-list
       >
         <li v-for="(message, index) in messagesList" :key="index" aria-label="Mensaje enviado">
           <!-- Message type document -->
