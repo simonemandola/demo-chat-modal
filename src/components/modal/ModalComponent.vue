@@ -14,7 +14,12 @@
           class="sticky z-10 top-0 left-0 right-0 py-4 px-2 grid grid-cols-header justify-between items-center border-b-2 border-gray-700 bg-white shadow-md"
           data-e2e-modal-top-bar
       >
-        <h1 class="justify-self-center font-medium ml-12" aria-label="Titulo comentarios, hablar con el tutor">Comentarios</h1>
+        <h1
+            class="justify-self-center font-medium ml-12"
+            aria-label="Titulo comentarios, hablar con el tutor"
+        >
+          Comentarios
+        </h1>
         <button
             type="button"
             @click.prevent="hideModal"
@@ -77,6 +82,7 @@ function scrollToLastMessage(element: HTMLUListElement): void {
   });
 }
 
+// Callback the function 'scrollToLastMessage' when preloaded messages are loaded
 onMounted(()=> {
   nextTick(()=> {
     scrollToLastMessage(messagesListElement.value?.$el);

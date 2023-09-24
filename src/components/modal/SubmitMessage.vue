@@ -70,26 +70,29 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, nextTick } from "vue";
+import { computed, ref } from "vue";
 import { useConversationStore } from "../../../store/store";
 
 const conversationStore = useConversationStore();
 const message = ref("");
 const attachment = ref({});
 const attachmentHTMLInput = ref();
-const hasAttachment = computed(()=> {
-  return !!(attachment.value?.name);
+
+const hasAttachment = computed((): boolean => {
+  return !!(attachment.value?.name); // If the attachment name exist return 'true'
 });
-const disabledTextInput = computed(()=> {
+const disabledTextInput = computed((): boolean => {
   return hasAttachment.value;
 });
-const disabledFileInput = computed(()=> {
-  return !!(message.value);
+const disabledFileInput = computed((): boolean => {
+  return !!(message.value); // if the message exist return 'true'
 })
-const inputTextPlaceholder = computed(()=> {
+// Return message placeholder when attachment exists
+const inputTextPlaceholder = computed((): string => {
   return hasAttachment.value ? "Enviar: " + attachment.value.name : "";
 });
 
+// Fired when user click on send message button
 function submitData(): void {
 
   // remove whitespace from both ends
@@ -102,30 +105,28 @@ function submitData(): void {
   if (hasAttachment.value) {
     conversationStore.sendAttachmentMessage(attachment.value);
     // Clear Input file field
-    nextTick(()=> {
-      clearAttachment();
-    })
+    clearAttachment();
   } else {
     conversationStore.sendTextMessage(message.value);
     // Clear input text field
-    nextTick(()=> {
-      clearMessageValue();
-    })
+    clearMessageValue();
   }
 
 }
 
-// Store attached when uploaded
-function onAttachFile(event: Event): void {
-  attachment.value = (event.target as object).files[0];
+// Save the attachment when uploaded
+function onAttachFile(event: object): void {
+  attachment.value = event.target.files[0];
   clearMessageValue();
 }
 
+// Clear the attachment element
 function clearAttachment(): void {
   attachment.value = {};
   attachmentHTMLInput.value.value = "";
 }
 
+// Clear the message value
 function clearMessageValue(): void {
   message.value = "";
 }

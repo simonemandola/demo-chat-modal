@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import { studentAvatar, tutorAvatar } from "@/data/data";
+import { studentAvatarUrl, tutorAvatarUrl } from "@/data/data";
 import { formatDateDayMonthYear, formatTimeHoursAndMinutes } from "@/mixins/mixins";
 
 defineProps<{
@@ -41,7 +41,7 @@ defineProps<{
 }>();
 
 function getAvatarUrl(isStudent: boolean): string {
-  return isStudent ? studentAvatar : tutorAvatar;
+  return isStudent ? studentAvatarUrl : tutorAvatarUrl;
 }
 
 // Callback mixins function to format date and hour into text

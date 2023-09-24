@@ -1,5 +1,5 @@
 import { defineStore } from "pinia"
-import {preloadedMessageList, PreloadedMessagesListInterface, studentName} from "@/data/data";
+import { preloadedMessageList, PreloadedMessagesListInterface } from "@/data/data";
 import { getAttachmentExtension } from "@/mixins/mixins";
 
 export const useConversationStore = defineStore("conversation", {
@@ -11,7 +11,6 @@ export const useConversationStore = defineStore("conversation", {
         sendAttachmentMessage(attachment: object): void {
             // Create new data to push into the messages list
             const newData: PreloadedMessagesListInterface = {
-                author: studentName,
                 attachment: {
                     name: attachment.name,
                     extension: getAttachmentExtension(attachment.name),
@@ -29,7 +28,6 @@ export const useConversationStore = defineStore("conversation", {
         sendTextMessage(text: string): void {
             // Create new data to push into the messages list
             const newData: PreloadedMessagesListInterface = {
-                author: studentName,
                 attachment: {},
                 date: new Date(),
                 isStudent: true,
