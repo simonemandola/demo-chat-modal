@@ -1,7 +1,7 @@
 # Demo Modal Chat con Vue 3 + Vite + TypeScript + Cypress + Tailwind CSS
 It's a demonstration in which a user engages in a conversation with their tutor.
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+The project uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
 ## Docs 📄
 - [Vue 3](https://vuejs.org/guide/introduction.html)
