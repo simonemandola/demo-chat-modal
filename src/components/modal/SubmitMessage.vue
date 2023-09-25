@@ -102,15 +102,14 @@ function submitData(): void {
   if (!message.value && !hasAttachment.value)
     return
 
-  if (hasAttachment.value) {
-    conversationStore.sendAttachmentMessage(attachment.value);
-    // Clear Input file field
-    clearAttachment();
-  } else {
-    conversationStore.sendTextMessage(message.value);
-    // Clear input text field
-    clearMessageValue();
-  }
+  const newMessageData = message.value ? message.value : attachment.value;
+
+  // callback function to send message
+  conversationStore.sendMessage(newMessageData);
+
+  // Clear inputs fields
+  clearAttachment();
+  clearMessageValue();
 
 }
 

@@ -1,4 +1,4 @@
-export interface PreloadedMessagesListInterface {
+export interface MessageInterface {
     attachment?: {
         name?: string;
         extension?: string;
@@ -16,7 +16,7 @@ export const studentAvatarUrl = "src/assets/img/student-avatar.jpg";
 export const tutorAvatarUrl = "src/assets/img/tutor-avatar.jpg";
 export const attachmentUrl = "src/assets/Titulo del archivo a subir 2.pdf";
 
-export const preloadedMessageList = <PreloadedMessagesListInterface[]>[
+export const preloadedMessageList = <MessageInterface[]>[
     {
         attachment: {
             name: "Titulo del archivo a subir 2.pdf",
